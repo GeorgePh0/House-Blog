@@ -74,18 +74,19 @@
                         </span> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
-                    <p>
-                        <a>
-                            <i class="fa-solid fa-pen"></i>
-                        </a>
-                        &nbsp;
+                    <div class="edit-delete">
+                        <form>
+                            <button type="submit" class="btn btn-edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </form>
                         <form method="POST" action="{% url 'delete_comment' post.slug comment.id %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-delete">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
                         </form>
-                    </p>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
