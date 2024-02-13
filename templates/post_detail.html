@@ -75,7 +75,8 @@
                     </p>
                     {{ comment.body | linebreaks }}
                     <div class="edit-delete">
-                        <form>
+                        <form method="POST" action="{% url 'edit_comment' post.slug comment.id %}">
+                            {% csrf_token %}
                             <button type="submit" class="btn btn-edit">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
