@@ -68,8 +68,6 @@ The purpose of this site is to allow users to share their home ideas online to o
         - 1. Account registration and login:
             - As a **Site User** I can **register an account** so that **I can share my house for people to comment and like**
 
-### Project Goals
-
 ## Features
 
 ### Existing Features

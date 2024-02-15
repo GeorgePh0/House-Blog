@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post, Comment
 from .forms import CommentForm
 from django.contrib import messages
@@ -68,7 +69,7 @@ class PostDetail(View):
         )
 
 
-class PostLike(View):
+class PostLike(LoginRequiredMixin, View):
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
@@ -80,7 +81,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-def edit_comment(request, slug, comment_id):
+def edit_comment(LoginRequiredMixin, UserPassesTestMixin, request, slug, comment_id):
     
     if request.method == "POST":
         queryset = Post.objects.filter(status=1)
@@ -101,7 +102,7 @@ def edit_comment(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-def delete_comment(request, slug, comment_id):
+def delete_comment(LoginRequiredMixin, UserPassesTestMixin, request, slug, comment_id):
     
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
