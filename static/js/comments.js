@@ -13,3 +13,5 @@ for (let button of commentEditButtons) {
         commentEditForm.setAttribute("action", `edit_comment/${commentId}`);
     });
 }
+// not fixed
+
