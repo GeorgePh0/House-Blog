@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
 
 {% load crispy_forms_tags %}
 
@@ -119,4 +122,10 @@
     </div>
 </div>
 
+<script src="{% static 'js/comments.js' %}"></script>
+
 {% endblock content %}
+
+{% block extras %}
+
+{% endblock %}
