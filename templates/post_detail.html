@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
@@ -14,7 +14,8 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://t3.ftcdn.net/jpg/01/84/81/64/360_F_184816468_sXO2m7Xhy2xqENls5YxrKlmFg3Ii82Mr.jpg" width="100%">
+                <img src="https://t3.ftcdn.net/jpg/01/84/81/64/360_F_184816468_sXO2m7Xhy2xqENls5YxrKlmFg3Ii82Mr.jpg"
+                    width="100%">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" width="100%">
                 {% endif %}
@@ -38,15 +39,17 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                            <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
@@ -76,20 +79,19 @@
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
-                    <p class="comment-body">
+                    <p class="comment-body" id="comment{{ comment.id }}">
                         {{ comment.body | linebreaks }}
                     </p>
                     <div class="edit-delete">
-                        <form class="comment-form hidden" method="POST" action="{% url 'edit_comment' post.slug comment.id %}">
-                            {% csrf_token %}
-                            <textarea name="body" cols="40" rows="10" class="textarea form-control" required="" id="id_body">
-                                {{ comment.body }}
-                            </textarea>
-                            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                        </form>
-                        <button type="submit" class="btn btn-edit" comment_id="{{ comment.id }}">
-                            <i class="fa-solid fa-pen"></i>
-                        </button>
+                        {% if user.is_authenticated and comment.name == user.username %}
+                            <button class="btn btn-edit" data-comment_id="{{ comment.id }}">
+                                Edit
+                            </button>
+                        {% endif %}
+                        <!-- <button class="btn btn-edit" data-comment_id="{{ comment.id }}">
+                             <i class="fa-solid fa-pen"></i>
+                            Edit
+                        </button> -->
                         <form method="POST" action="{% url 'delete_comment' post.slug comment.id %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-delete" comment_id="{{ comment.id }}">

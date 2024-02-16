@@ -1,13 +1,15 @@
-const commentEditButtons = document.getElementsByClassName("btn-edit");
+const editButtons = document.getElementsByClassName("btn-edit");
+const commentText = document.getElementById("id_body");
+const commentForm = document.getElementById("comment-section");
+const submitButton = document.getElementById("submitButton");
 
-for (let button of commentEditButtons) {
+for (let button of editButtons) {
     button.addEventListener("click", (e) => {
-        console.log('edit button clicked')
-        let commentId = e.target.getAttribute("comment_id");
+        let commentId = e.target.getAttribute("data-comment_id");
+        console.log(commentId)
         let commentContent = document.getElementById(`comment${commentId}`).innerText;
-        commentTextElement.value = commentContent;
+        commentText.value = commentContent;
         submitButton.innerText = "Update";
-        commentEditForm.setAttribute("action", `edit_comment/${commentId}`);
+        commentForm.setAttribute("action", `comment_edit/${commentId}`);
     });
 }
-

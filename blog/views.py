@@ -102,7 +102,7 @@ def edit_comment(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-def delete_comment(LoginRequiredMixin, UserPassesTestMixin, request, slug, comment_id):
+def delete_comment(request, slug, comment_id):
     
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
