@@ -76,20 +76,14 @@
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
-                    <p class="comment-body">
-                        {{ comment.body | linebreaks }}
-                    </p>
+                    {{ comment.body | linebreaks }}
                     <div class="edit-delete">
                         <form class="comment-form hidden" method="POST" action="{% url 'edit_comment' post.slug comment.id %}">
                             {% csrf_token %}
-                            <textarea name="body" cols="40" rows="10" class="textarea form-control" required="" id="id_body">
-                                {{ comment.body }}
-                            </textarea>
-                            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                            <button type="submit" class="btn btn-edit" comment_id="{{ comment.id }}">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
                         </form>
-                        <button type="submit" class="btn btn-edit" comment_id="{{ comment.id }}">
-                            <i class="fa-solid fa-pen"></i>
-                        </button>
                         <form method="POST" action="{% url 'delete_comment' post.slug comment.id %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-delete" comment_id="{{ comment.id }}">

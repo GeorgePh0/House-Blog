@@ -133,7 +133,6 @@ The purpose of this site is to allow users to share their home ideas online to o
 
 ## Deployment
 
-
 ## Credits
 
 ### Acknowledgements

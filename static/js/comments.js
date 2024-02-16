@@ -1,7 +1,4 @@
 const commentEditButtons = document.getElementsByClassName("btn-edit");
-const commentTextElement = document.getElementById("id_body");
-const commentEditForm = document.getElementById("comment-form");
-const submitButton = document.getElementById("submitButton");
 
 for (let button of commentEditButtons) {
     button.addEventListener("click", (e) => {
@@ -13,5 +10,4 @@ for (let button of commentEditButtons) {
         commentEditForm.setAttribute("action", `edit_comment/${commentId}`);
     });
 }
-// not fixed
 

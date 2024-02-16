@@ -81,7 +81,7 @@ class PostLike(LoginRequiredMixin, View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-def edit_comment(LoginRequiredMixin, UserPassesTestMixin, request, slug, comment_id):
+def edit_comment(request, slug, comment_id):
     
     if request.method == "POST":
         queryset = Post.objects.filter(status=1)
