@@ -74,21 +74,33 @@ The purpose of this site is to allow users to share their home ideas online to o
 
 #### Navigation Bar
 
+![navbar-logged-out](media/documentation/nav-bar-logged-out.jpg)
+
 #### Home page
 
 #### Register page
 
+![register](media/documentation/signup-page.jpg)
+
 #### Login page
+
+![login](media/documentation/signin-page.jpg)
 
 #### Logout page
 
-#### Profile page
+![logout](media/documentation/signout-page.jpg)
 
 #### Post detail page
 
+![post-detail](media/documentation/post-detail-page.jpg)
+
 #### Django Admin page
 
+![admin](media/documentation/admin-page.jpg)
+
 #### Footer
+
+![footer](media/documentation/footer.jpg)
 
 ## Technologies Used
 
