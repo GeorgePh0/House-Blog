@@ -104,11 +104,18 @@ The purpose of this site is to allow users to share their home ideas online to o
 
 ## Technologies Used
 
-### Languages used
+### Languages / Frameworks / Libraries / Apps used
 
-### Frameworks and Libraries used
-
-### Applications used
+    - HTML
+    - CSS
+    - Javascript
+    - Python
+    - Django
+    - SQL
+    - Bootstrap
+    - Cloudinary
+    - Fontawesome
+    - Heroku
 
 ## Testing
 
