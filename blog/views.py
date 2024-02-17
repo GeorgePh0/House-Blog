@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic.edit import UpdateView
 from .models import Post, Comment
 from .forms import CommentForm
 from django.contrib import messages
@@ -80,6 +81,19 @@ class PostLike(LoginRequiredMixin, View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
+class CommentUpdateView(UpdateView):
+
+    model = Comment
+
+    fields = [
+        "post",
+        "name",
+        "body",
+    ]
+
+    success_url = "post_detail.html"
+    
 
 def edit_comment(request, slug, comment_id):
     

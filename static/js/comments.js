@@ -6,10 +6,11 @@ const submitButton = document.getElementById("submitButton");
 for (let button of editButtons) {
     button.addEventListener("click", (e) => {
         let commentId = e.target.getAttribute("data-comment_id");
-        console.log(commentId)
         let commentContent = document.getElementById(`comment${commentId}`).innerText;
         commentText.value = commentContent;
+        console.log(commentContent)
         submitButton.innerText = "Update";
-        commentForm.setAttribute("action", `comment_edit/${commentId}`);
+        commentForm.setAttribute("action", `${commentId}`);
+        console.log(commentForm)
     });
 }
