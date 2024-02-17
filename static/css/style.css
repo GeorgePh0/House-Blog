@@ -44,6 +44,11 @@ body {
     position: relative;
 }
 
+.card-img-top {
+    max-height: 600px;
+    max-width: 600px;
+}
+
 .image-flash {
     position: absolute;
     bottom: 5%;
