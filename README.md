@@ -74,31 +74,49 @@ The purpose of this site is to allow users to share their home ideas online to o
 
 #### Navigation Bar
 
+The navbar has 2 different viewing points. The screenshot below shows the navbar when the user has not signed in to the blog.
+
 ![navbar-logged-out](media/documentation/nav-bar-logged-out.jpg)
+
+This screenshot shows the user is logged in and that if they want too, then they can log out.
+
+![navbar-logged-in](media/documentation/nav-bar-logged-in.jpg)
 
 #### Home page
 
-#### Register page
+#### Sign Up page
+
+This sign up page shows people having a username, email if they want too input that and also a password with also confirming the password they have chosen.
 
 ![register](media/documentation/signup-page.jpg)
 
-#### Login page
+#### Sign In page
+
+The sign in page has a username and password input for them to login. If the person does not have credentials, they can click the sign up link, that will direct them to the sign up page. If the user has forgotten there password, they can click the "Forgot your password?" to then be directed to the Password Reset page.
 
 ![login](media/documentation/signin-page.jpg)
 
-#### Logout page
+#### Sign Out page
+
+The sign out page is simple and gives a message to the user asking them if they are sure they want to sign out. If so then they would press the "Sign Out" button again.
 
 ![logout](media/documentation/signout-page.jpg)
 
 #### Post detail page
 
+The post detail page shows the blog title, the creator and the time that it was posted. If you look under that you will see the description and how many likes and comments there are.
+
 ![post-detail](media/documentation/post-detail-page.jpg)
 
 #### Django Admin page
 
+Inside the admin page, this is here so the admin can navigate around easily and they can add the posts, approve comments, delete posts and also do other admin jobs.
+
 ![admin](media/documentation/admin-page.jpg)
 
 #### Footer
+
+The footer is located at the bottom of the page, this consists of the three social medias that the blog uses to let people know they have posted a new blog. The social medias are Facebook, Instagram and X.
 
 ![footer](media/documentation/footer.jpg)
 
