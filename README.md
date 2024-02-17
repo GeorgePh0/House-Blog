@@ -84,6 +84,10 @@ This screenshot shows the user is logged in and that if they want too, then they
 
 #### Home page
 
+The home page shows a family blog page. The only people who can post on this blog are the admins of the site. The reason I have taken this approach is because I wanted this website to be a blog from a family and have people who want to follow their life through the blogs, to comment and like the posts.
+
+![home-page](media/documentation/home-page.jpg)
+
 #### Sign Up page
 
 This sign up page shows people having a username, email if they want too input that and also a password with also confirming the password they have chosen.
