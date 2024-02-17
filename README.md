@@ -21,6 +21,8 @@ The purpose of this site is to allow users to share their home ideas online to o
         * [Post detail page](#post-detail-page)
         * [Django Admin page](#django-admin-page)
         * [Footer](#footer)
+* [Design](#design)
+    * [Wireframes](#wireframes)
 * [Technologies Used](#technologies-used)
     * [Languages Used](#languages-used)
     * [Frameworks and Libraries used](#frameworks-and-libraries-used)
@@ -123,6 +125,20 @@ Inside the admin page, this is here so the admin can navigate around easily and 
 The footer is located at the bottom of the page, this consists of the three social medias that the blog uses to let people know they have posted a new blog. The social medias are Facebook, Instagram and X.
 
 ![footer](media/documentation/footer.jpg)
+
+## Design
+
+### Wireframes
+
+At the start of my project I used a website called Figma to plan my website. The wireframes were used to get a basic idea on how the site might look when it is finished.
+
+Home page:
+
+![wireframe-home](media/documentation/wireframe-home.jpg)
+
+Post Detail page:
+
+![wireframe-post-detail](media/documentation/wireframe-post-detail.jpg)
 
 ## Technologies Used
 
