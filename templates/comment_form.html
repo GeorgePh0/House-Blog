@@ -1,7 +1,35 @@
-<p>Hello World</p>
-
-<form method="post">  
-    {% csrf_token %}  
-    {{ form.as_p }}  
-    <input type="submit" value="Save">  
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Comment</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    
+    {% if user.is_authenticated %}
+        {% if user.username.id == comment.name.id %}
+            <h1>Update blog comment</h1>
+    
+            <br/>
+            <div>
+                <form method="post">  
+                    {% csrf_token %}  
+                    {{ form.as_p }}  
+                    <input type="submit" value="Save">  
+                </form>
+            </div>
+        {% else %}
+            You're not logged in
+        {% endif %}
+    {% else %}
+    
+    You're not logged in
+    
+    {% endif %}
+    
+    {% endblock %}   
+</body>
+</html>

@@ -6,6 +6,7 @@ from django.views.generic.edit import UpdateView
 from .models import Post, Comment
 from .forms import CommentForm, EditForm
 from django.contrib import messages
+from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
@@ -88,7 +89,7 @@ class CommentUpdateView(UpdateView):
     form_class = EditForm
     template_name = 'comment_form.html'
 
-    success_url = "post_detail.html"
+    success_url = reverse_lazy('home')
 
 
 def delete_comment(request, slug, comment_id):
