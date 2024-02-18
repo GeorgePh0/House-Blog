@@ -22,7 +22,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('blog.urls'), name='blog_urls'),
     path("accounts/", include("allauth.urls")),
-    path('<pk>/update', CommentUpdateView.as_view()), 
 ]
 
 handler404 = 'blog.views.handler404'

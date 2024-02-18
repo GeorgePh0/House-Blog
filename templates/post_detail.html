@@ -85,7 +85,9 @@
                     <div class="edit-delete">
                         {% if user.is_authenticated and comment.name == user.username %}
                             <button class="btn btn-edit" data-comment_id="{{ comment.id }}">
-                                Edit
+                                <a href="{% url 'comment_form' comment.pk %}">
+                                    Edit
+                                </a>
                             </button>
                         {% endif %}
                         <!-- <button class="btn btn-edit" data-comment_id="{{ comment.id }}">

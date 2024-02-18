@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import UpdateView
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, EditForm
 from django.contrib import messages
 
 
@@ -85,35 +85,10 @@ class PostLike(LoginRequiredMixin, View):
 class CommentUpdateView(UpdateView):
 
     model = Comment
-
-    fields = [
-        "post",
-        "name",
-        "body",
-    ]
+    form_class = EditForm
+    template_name = 'comment_form.html'
 
     success_url = "post_detail.html"
-    
-
-def edit_comment(request, slug, comment_id):
-    
-    if request.method == "POST":
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comment = get_object_or_404(Comment, pk=comment_id)
-        comment_form = CommentForm(data=request.POST, instance=comment)
-
-        if comment_form.is_valid() and comment.name == request.user.username:
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.approved = False
-            comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
-        else:
-            messages.add_message(request, messages.ERROR,
-                                 'Error updating comment!')
-
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
 def delete_comment(request, slug, comment_id):
