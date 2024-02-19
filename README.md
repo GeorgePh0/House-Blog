@@ -165,13 +165,23 @@ Here I created a ERD for my blog model.
 
 ### Validator Testing
 
+[W3C HTML Validator](https://validator.w3.org/)
 
+![html-validation](media/documentation/html-validation.jpg)
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+![css-validation](media/documentation/css-validation.jpg)
+
+[CI Python Linter](https://pep8ci.herokuapp.com/)
+
+![python-validation](media/documentation/python-validation.jpg)
+
+### LightHouse Report
+
+![lighthouse](media/documentation/lighthouse-report.jpg)
 
 ### Automated Testing
-
-### Responsiveness
-
-### Browser Testing
 
 ### Solved bugs
 
