@@ -8,34 +8,29 @@ The purpose of this site is to allow users to share their home ideas online to o
 ## Table of Contents
 * [User Experience](#user-experience)
     * [User Stories](#user-stories)
-    * [Strategy](#strategy)
-    * [Project Goals](#project-goals)
 * [Features](#features)
     * [Existing Features](#existing-features)
         * [Navigation Bar](#navigation-bar)
         * [Home page](#home-page)
-        * [Register page](#register-page)
-        * [Login page](#login-page)
-        * [Logout page](#logout-page)
-        * [Profile page](#profile-page)
+        * [Sign Up](#sign-up-page)
+        * [Sign In page](#sign-in-page)
+        * [Sign Out page](#sign-out-page)
         * [Post detail page](#post-detail-page)
         * [Django Admin page](#django-admin-page)
         * [Footer](#footer)
 * [Design](#design)
     * [Wireframes](#wireframes)
 * [Technologies Used](#technologies-used)
-    * [Languages Used](#languages-used)
-    * [Frameworks and Libraries used](#frameworks-and-libraries-used)
-    * [Applications used](#applications-used)
+    * [Languages / Frameworks / Libraries / Apps used](#languages--frameworks--libraries--apps-used)
+* [Entity Relationship Diagram](#entity-relationship-diagram)
 * [Testing](#testing)
     * [Validator Testing](#validator-testing)
-    * [Automated Testing](#automated-testing)
-    * [Responsiveness](#responsiveness)
-    * [Browser Testing](#browser-testing)
-    * [Solved bugs](#solved-bugs)
-    * [Known bugs](#known-bugs)
+    * [Lighthouse](#lighthouse-report)
+    * [Manual Testing](#manual-testing)
+    * [Solved Issues](#solved-issues)
 * [Deployment](#deployment)
 * [Credits](#credits)
+    * [Resources Used](#resources-used)
     * [Acknowledgements](#acknowledgements)
 
 ## User Experience
@@ -181,11 +176,12 @@ Here I created a ERD for my blog model.
 
 ![lighthouse](media/documentation/lighthouse-report.jpg)
 
-### Automated Testing
+### Manual Testing
 
-### Solved bugs
+### Solved Issues
 
-### Known bugs
+I was trying to use Javascript to create a edit comment function.
+I was unable to get it to work but I came across UpdateView with Django and fixed the issue by implementing that instead.
 
 ## Deployment
 
@@ -200,3 +196,5 @@ UpdateView - https://www.geeksforgeeks.org/updateview-class-based-views-django/?
 Used for Wireframes - https://www.figma.com/
 
 ### Acknowledgements
+
+Big Thank you to Brian, my mentor for helping me and guiding me through the project.
