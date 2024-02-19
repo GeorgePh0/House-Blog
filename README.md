@@ -178,6 +178,28 @@ Here I created a ERD for my blog model.
 
 ### Manual Testing
 
+| Testcase                                    | Expected Result                                         | Test Result |
+|---------------------------------------------|---------------------------------------------------------|-------------|
+| Logo is clicked                             | Home page is loaded successfully                        | PASS        |
+| Open the Homepage                           | Home page is loaded successfully                        | PASS        |
+| Open Post                                   | Post page is loaded successfully                        | PASS        |
+| Open Sign Up page                           | Sign Up page is loaded successfully                     | PASS        |
+| Open Sign In page                           | Sign In page is loaded successfully                     | PASS        |
+| Open Sign Out page                          | Sign Out page is loaded successfully                    | PASS        |
+| Open a specific post                        | Specific post is loaded successfully                    | PASS        |
+| Register user with valid data               | Request is Successful                                   | PASS        |
+| Register user with invalid data             | Request is not Successful                               | PASS        |
+| Login user with valid data                  | Request is Successful                                   | PASS        |
+| Login user with invalid data                | Request is not Successful                               | PASS        |
+| Authenticated user can comment              | Comment body is visible                                 | PASS        |
+| Non-Authenticated user can comment          | Comment body is not visible                             | PASS        |
+| Authenticated user can edit comment         | User can edit there own comment and not any other users | PASS        |
+| Non-Authenticated user can edit comment     | Edit button is not visible                              | PASS        |
+| Authenticated user can delete comment       | User can delete there own comment and not anybody else  | PASS        |
+| Non-Authenticated user can delete comment   | Delete button is not visible                            | PASS        |
+| Try opening a non existing page             | 404 page is loaded successfully                         | PASS        |
+| Social Media icons in the footer is clicked | Social media link opens in a new tab                    | PASS        |
+
 ### Solved Issues
 
 I was trying to use Javascript to create a edit comment function.
