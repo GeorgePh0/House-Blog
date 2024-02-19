@@ -155,6 +155,12 @@ Post Detail page:
     - Fontawesome
     - Heroku
 
+## Entity Relationship Diagram
+
+Here I created a ERD for my blog model.
+
+![ERD](media/documentation/erd.jpg)
+
 ## Testing
 
 ### Validator Testing
@@ -172,5 +178,13 @@ Post Detail page:
 ## Deployment
 
 ## Credits
+
+### Resources Used
+
+Code Institute - I THINK THEREFORE I BLOG
+
+UpdateView - https://www.geeksforgeeks.org/updateview-class-based-views-django/?ref=lbp
+
+Used for Wireframes - https://www.figma.com/
 
 ### Acknowledgements
