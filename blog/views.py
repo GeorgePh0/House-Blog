@@ -10,7 +10,6 @@ from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
-    
     model = Post
     queryset = Post.objects.filter(status=1).order_by('created_on')
     template_name = 'index.html'
@@ -38,7 +37,7 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -93,14 +92,15 @@ class CommentUpdateView(UpdateView):
 
 
 def delete_comment(request, slug, comment_id):
-    
+
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if comment.name == request.user.username:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment has been deleted.')
+        messages.add_message(
+                request, messages.SUCCESS, 'Comment has been deleted.')
     else:
         messages.add_message(request, messages.ERROR,
                              'You can only delete your own comments.')

@@ -165,6 +165,8 @@ Here I created a ERD for my blog model.
 
 ### Validator Testing
 
+
+
 ### Automated Testing
 
 ### Responsiveness
