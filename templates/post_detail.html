@@ -86,14 +86,10 @@
                         {% if user.is_authenticated and comment.name == user.username %}
                             <button class="btn btn-edit" data-comment_id="{{ comment.id }}">
                                 <a href="{% url 'comment_form' comment.pk %}">
-                                    Edit
+                                    <i class="fa-solid fa-pen"></i>
                                 </a>
                             </button>
                         {% endif %}
-                        <!-- <button class="btn btn-edit" data-comment_id="{{ comment.id }}">
-                             <i class="fa-solid fa-pen"></i>
-                            Edit
-                        </button> -->
                         <form method="POST" action="{% url 'delete_comment' post.slug comment.id %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-delete" comment_id="{{ comment.id }}">
