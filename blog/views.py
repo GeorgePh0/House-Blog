@@ -10,15 +10,27 @@ from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
+    """
+    View for displaying all blog posts on blog page,
+    including filter by approved and order by date descending,
+    paginated by 6 blog posts on each page
+    """
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
 
 
 class PostDetail(View):
-
+    """
+    View for displaying individual blog posts on a single page,
+    including features to add a comment or like
+    """
     def get(self, request, slug, *args, **kwargs):
+        """
+        Get method to retrieve post details including comments and likes
+        and render post detail page
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -39,6 +51,11 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        Post method to validate comment input, save and re-load
+        post detail page
+        Success message as user feedback
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -71,7 +88,9 @@ class PostDetail(View):
 
 
 class PostLike(LoginRequiredMixin, View):
-
+    """
+    View to remove or add like on post detail page
+    """
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -83,7 +102,10 @@ class PostLike(LoginRequiredMixin, View):
 
 
 class CommentUpdateView(UpdateView):
-
+    """
+    View to allow users to update their comment
+    on the post detail page
+    """
     model = Comment
     form_class = EditForm
     template_name = 'comment_form.html'
@@ -92,7 +114,10 @@ class CommentUpdateView(UpdateView):
 
 
 def delete_comment(request, slug, comment_id):
-
+    """
+    View to allow users to delete their comment
+    on the post detail page
+    """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
