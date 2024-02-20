@@ -1,7 +1,7 @@
 # Housing Blog
 
-This is my fourth project with Code Institute. Housing Blog is an Django blog application which is built for people who are looking for housing designs for their own homes.
-The purpose of this site is to allow users to share their home ideas online to other users through, uploading images, commenting on their ideas to help other people and liking other peoples posts.
+This is my fourth project with Code Institute. House Blog is an Django blog application which is built for people who want to follow this families life through a blog page.
+The purpose of this site is to allow users to follow a families life, as they show updates on their homes that they are renovating or properties that they have brought to then spice up.
 
 [Deployed project here](https://house-blog-3cdc751164b6.herokuapp.com/)
 
@@ -32,11 +32,11 @@ The purpose of this site is to allow users to share their home ideas online to o
     * [Solved Issues](#solved-issues)
 * [Deployment](#deployment)
     * [ElephantSQL](#elephantsql)
-    * [Cloudinary]
-    * [Before Deployment]
-    * [Heroku]
-    * [Forking]
-    * [Cloning]
+    * [Cloudinary](#cloudinary)
+    * [Before Deployment](#before-deployment)
+    * [Heroku](#heroku)
+    * [Forking](#forking)
+    * [Cloning](#cloning)
 * [Credits](#credits)
     * [Resources Used](#resources-used)
     * [Acknowledgements](#acknowledgements)
