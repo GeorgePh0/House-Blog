@@ -29,6 +29,12 @@ The purpose of this site is to allow users to share their home ideas online to o
     * [Manual Testing](#manual-testing)
     * [Solved Issues](#solved-issues)
 * [Deployment](#deployment)
+    * [ElephantSQL](#elephantsql)
+    * [Cloudinary]
+    * [Before Deployment]
+    * [Heroku]
+    * [Forking]
+    * [Cloning]
 * [Credits](#credits)
     * [Resources Used](#resources-used)
     * [Acknowledgements](#acknowledgements)
@@ -206,6 +212,61 @@ I was trying to use Javascript to create a edit comment function.
 I was unable to get it to work but I came across UpdateView with Django and fixed the issue by implementing that instead.
 
 ## Deployment
+
+### ElephantSQL
+
+An external database was created in ElephantSQL using the following steps:
+    
+1. Log in to ElephantSQL and select 'Create New Instance'.
+2. Select a plan, input your details and review.
+3. Once created, use the copy icon to copy the DATABASE_URL
+
+### Cloudinary
+
+Cloudinary was used to store static and media files:
+
+1. Log in to Cloudinary
+2. Copy your CLOUDINARY_URL
+
+### Before Deployment
+
+Important things to do before deployment:
+
+1. The requirements for the project were added to a requirements.txt using the command 'pip3 freeze > requirements.txt' in the terminal.
+2. Inside .gitignore file, include env.py to ensure sensitive information is not pushed to GitHub.
+3. In settings.py, set 'DEBUG = False' to prevent verbose error pages and Django serving static files itself instead of replying on Cloudinary.
+4. in settings.py, link SECRET_KEY to the env.py file where the secret key is defined.
+
+### Heroku
+
+Heroku is where the app will be deployed to. Follow these steps:
+
+1. Log in to Heroku and select 'Create New App'
+2. Create a unique name for your app and select your location.
+3. Open the settings tab, go to the 'Reveal Config Vars' and set the Config Vars for deployment.
+
+Config Vars for deployment:
+
+- DATABASE_URL
+- SECRET_KEY
+- CLOUDINARY_URL
+
+4. Select the Deploy tab and connect your github repo to this if you have not done already.
+5. Scroll to the bottom of the deploy tab and 'Deploy Branch'.
+6. Click 'View' to open the deployed app.
+
+### Forking
+
+1. Inside the GitHub repo, click on 'Fork' and then 'Create a Fork'.
+2. Change the name and description of the fork.
+3. Then copy only the main branch or all branches.
+4. 'Create a Fork' and a new repo will appear in your GitHub.
+
+### Cloning
+
+1. Inside the GitHub repository, click 'Code' and copy the link provided.
+2. Open git bash and change the working directory to the location you want.
+3. Then use 'git clone' and paste the link. All done. 
 
 ## Credits
 
