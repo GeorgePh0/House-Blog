@@ -1,35 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Comment</title>
-</head>
-<body>
-    {% extends 'base.html' %}
-    {% block content %}
+{% extends 'base.html' %}
+{% block content %}
     
-    {% if user.is_authenticated %}
-        {% if user.username.id == comment.name.id %}
-            <h1>Edit Comment</h1>
+{% if user.is_authenticated %}
+    {% if user.username.id == comment.name.id %}
+        <h1>Edit Comment</h1>
     
-            <br/>
-            <div>
-                <form method="post">  
-                    {% csrf_token %}  
-                    {{ form.as_p }}  
-                    <input id="submitButton" type="submit" class="btn btn-signup btn-lg" value="Save">
-                </form>
-            </div>
-        {% else %}
-            You're not logged in
-        {% endif %}
+        <br/>
+        <div>
+            <form method="post">  
+                {% csrf_token %}  
+                {{ form.as_p }}  
+                <input id="submitButton" type="submit" class="btn btn-signup btn-lg" value="Save">
+            </form>
+        </div>
     {% else %}
-    
-    You're not logged in
-    
+        You're not logged in
     {% endif %}
+{% else %}
     
-    {% endblock %}   
-</body>
-</html>
+You're not logged in
+    
+{% endif %}
+    
+{% endblock %}   
